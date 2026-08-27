@@ -39,12 +39,11 @@ export function ThemeProvider({ children, defaultTheme = "system" }: { children:
   }, [theme]);
 
   useEffect(() => {
-    if (theme === "system") {
-      const media = window.matchMedia("(prefers-color-scheme: dark)");
-      const handler = () => setResolvedTheme(getSystemTheme());
-      media.addEventListener("change", handler);
-      return () => media.removeEventListener("change", handler);
-    }
+    if (theme !== "system") return undefined;
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const handler = () => setResolvedTheme(getSystemTheme());
+    media.addEventListener("change", handler);
+    return () => media.removeEventListener("change", handler);
   }, [theme]);
 
   const setTheme = (next: Theme) => {
