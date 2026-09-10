@@ -1,7 +1,8 @@
 "use client";
 
-import { Menu, X, Leaf, Sun, Moon } from "lucide-react";
+import { Menu, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
+import logoAsset from "@/assets/selva-tropical-logo.png.asset.json";
 import {
   Sheet,
   SheetClose,
@@ -38,9 +39,13 @@ export function MobileNav({ className }: { className?: string }) {
       <SheetContent side="left" className="flex w-[85%] max-w-sm flex-col border-r border-border bg-background p-0">
         <SheetHeader className="px-6 pb-4 pt-6 text-left">
           <SheetTitle className="flex items-center gap-2 font-serif text-xl">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-jungle-900 dark:bg-leaf">
-              <Leaf className="h-4 w-4 text-white dark:text-jungle-950" />
-            </span>
+            <img
+              src={logoAsset.url}
+              alt="Logotipo de Selva Tropical"
+              className="h-10 w-10 rounded-full object-cover"
+              width={40}
+              height={40}
+            />
             Selva Tropical
           </SheetTitle>
         </SheetHeader>

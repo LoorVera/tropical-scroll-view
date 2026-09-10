@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Leaf, Moon, Sun, ShoppingBag } from "lucide-react";
+import { Moon, Sun, ShoppingBag } from "lucide-react";
 import { MobileNav } from "@/components/mobile-nav";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { useTheme } from "@/components/theme-provider";
+import logoAsset from "@/assets/selva-tropical-logo.png.asset.json";
 import heroProduct from "../../public/images/hero-product.jpg";
 import productSuperC from "../../public/images/product-super-c.jpg";
 import productEnergy from "../../public/images/product-energy-powder.jpg";
@@ -94,9 +95,13 @@ function Index() {
       <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
           <div className="flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-jungle-900 dark:bg-leaf">
-              <Leaf className="h-4 w-4 text-white dark:text-jungle-950" />
-            </span>
+            <img
+              src={logoAsset.url}
+              alt="Logotipo de Selva Tropical"
+              className="h-11 w-11 rounded-full object-cover"
+              width={44}
+              height={44}
+            />
             <span className="font-serif text-xl font-bold tracking-tight text-jungle-900 dark:text-white">
               Selva Tropical
             </span>
@@ -295,9 +300,14 @@ function Index() {
           <div className="mb-12 grid gap-12 md:grid-cols-4">
             <div className="md:col-span-2">
               <div className="mb-4 flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-jungle-900 dark:bg-leaf">
-                  <Leaf className="h-3 w-3 text-white dark:text-jungle-950" />
-                </span>
+                <img
+                  src={logoAsset.url}
+                  alt="Logotipo de Selva Tropical"
+                  className="h-9 w-9 rounded-full object-cover"
+                  loading="lazy"
+                  width={36}
+                  height={36}
+                />
                 <span className="font-serif text-lg font-bold text-jungle-900 dark:text-white">
                   Selva Tropical
                 </span>
